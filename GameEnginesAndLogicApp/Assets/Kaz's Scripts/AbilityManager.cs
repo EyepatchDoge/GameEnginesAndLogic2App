@@ -57,7 +57,7 @@ public class AbilityManager : MonoBehaviour
             if(ability.Value == true)
             {
                 GameObject go = Instantiate(ability.Key.scriptPrefab);
-                go.GetComponent<IAbility>().UseAbility();
+                //go.GetComponent<IAbility>().UseAbility();
                 UpdateDictonary(ability.Key, false);
             }
         }

@@ -21,6 +21,7 @@ public class TestItem : MonoBehaviour, IAbility
     {
         
             celeberation.Play();
+            Destroy(gameObject, celeberation.clip.length);
     }
 
 
@@ -28,11 +29,6 @@ public class TestItem : MonoBehaviour, IAbility
     {
         PlayCelebrationClip();
     }
-}
 
 
-//Interfaces that all abilities must implement
-public interface IAbility
-{
-    void UseAbility();
 }
