@@ -22,25 +22,27 @@ public class PaulPlayer : MonoBehaviour
     {
         Collider2D isGrounded = Physics2D.OverlapCircle(gDeteque.position, gDradious, groundDec);
         anime.SetBool("Grounded", isGrounded);
-        if(playerIsDed == false)
+        if (playerIsDed == false)
         {
             if (Input.touchCount > 0)
             {
                 Touch myTouch = Input.GetTouch(0);
-                Ray ray = Camera.main.ScreenPointToRay(myTouch.position);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+
+                //detects if the player is touching the screen and flies the player up
+                if (myTouch.phase == TouchPhase.Stationary)
                 {
-                    // moves the player up when pressing the screen
                     rb.velocity = Vector2.up * flyVel;
                     anime.SetBool("Flying", true);
                 }
-                else
+                //detects when the player stops touching the screen and lets the player fall
+                else if (myTouch.phase == TouchPhase.Ended)
                 {
+                    //rb.velocity = Vector2.up * flyVel;
                     anime.SetBool("Flying", false);
                 }
 
             }
+            //this is for testing purposes but does the same thing
             else if (Input.GetKey(KeyCode.A))
             {
                 rb.velocity = Vector2.up * flyVel;
@@ -51,10 +53,9 @@ public class PaulPlayer : MonoBehaviour
             {
                 anime.SetBool("Flying", false);
             }
+
         }
-        
-        
-        
+
     }
 
     private void OnDrawGizmosSelected()
@@ -90,9 +91,5 @@ public class PaulPlayer : MonoBehaviour
         playerIsDed = false;
         GameManager.instance.playDed = false;
     }
-    //public void MightAsWellJump()
-    //{
-    //    rb.velocity = Vector2.up * flyVel;
-    //    anime.SetBool("Flying", true);
-    //}
+    
 }
