@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool playDed;
     public float Points;
-    public PaulPlayer player;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,18 +20,18 @@ public class GameManager : MonoBehaviour
         }
         
         instance = this;
-       
-        /*
+
+
         if (instance != null)
         {
             instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(instance);
         }
         else
         {
-            Object.Destroy(gameObject);
+            Destroy(gameObject);
         }
-       */
+
     }
 
     // Update is called once per frame
@@ -49,9 +48,15 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void BackToTitle()
+    {
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1;
+    }
+
     public void ActivateShop() 
     {
-            Shop.SetActive(true);
+        Shop.SetActive(true);
 
     }
 }
