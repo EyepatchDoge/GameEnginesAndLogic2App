@@ -7,14 +7,14 @@ public class AsteroidManager : MonoBehaviour
     // Spawn boundaries for new asteroids
     public float minSpawnPosY;
     public float maxSpawnPosY;
-
+    public string poolTag;
     ObjectPooler objectPooler;
  
 
     public IEnumerator AsteroidSpawner()
     {
-        objectPooler.SpawnFromPool("Asteroid", new Vector3(transform.position.x, Random.Range(minSpawnPosY, maxSpawnPosY), transform.position.z), Quaternion.identity);
         yield return new WaitForSeconds(Random.Range(1,2));
+        objectPooler.SpawnFromPool(poolTag, new Vector3(transform.position.x, Random.Range(minSpawnPosY, maxSpawnPosY), transform.position.z), Quaternion.identity);
         StartCoroutine("AsteroidSpawner");
     }
 
