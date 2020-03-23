@@ -106,6 +106,42 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -114,9 +150,15 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD
         y: 60
         width: 60
         height: 60
+=======
+        y: 63
+        width: 54
+        height: 52
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,7 +166,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 0591bac15f6e5e24abc9b71f576af876
+=======
+      spriteID: 89a845cec45903c44a0318263d9738c4
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       internalID: -1839377291145181718
       vertices: []
       indices: 
@@ -134,10 +180,17 @@ TextureImporter:
       name: Asteroid_1
       rect:
         serializedVersion: 2
+<<<<<<< HEAD
         x: 60
         y: 60
         width: 60
         height: 60
+=======
+        x: 59
+        y: 64
+        width: 58
+        height: 52
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +198,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 7d6b2c7658c4d1b4882bfb6698ea6e95
+=======
+      spriteID: bf7d90a7607b0b242b002efcda5f81e9
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       internalID: 1326971399849966306
       vertices: []
       indices: 
@@ -156,9 +213,15 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+<<<<<<< HEAD
         y: 6
         width: 57
         height: 47
+=======
+        y: 3
+        width: 57
+        height: 52
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +229,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: 001a7f848d6d0f34ab9baf16d8d36785
+=======
+      spriteID: 3589f0d8c407cd54d97953f0e2f23224
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       internalID: -558074577616447318
       vertices: []
       indices: 
@@ -176,10 +243,17 @@ TextureImporter:
       name: Asteroid_3
       rect:
         serializedVersion: 2
+<<<<<<< HEAD
         x: 60
         y: 0
         width: 60
         height: 60
+=======
+        x: 58
+        y: 4
+        width: 60
+        height: 52
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +261,11 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< HEAD
       spriteID: d5508447940e85843bce82ad227d64f2
+=======
+      spriteID: b3e64d9cba06c964cb56369a742560f0
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
       internalID: 8193585196931898896
       vertices: []
       indices: 
@@ -196,7 +274,11 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
+<<<<<<< HEAD
     spriteID: 091c447833c90c94fb9a1291279a6a4f
+=======
+    spriteID: 4c54b7d60c807d747948f6ccfc1d585d
+>>>>>>> 8b60d88c36f1d628f51a32b9a04a6de89248c166
     internalID: 0
     vertices: []
     indices: 
