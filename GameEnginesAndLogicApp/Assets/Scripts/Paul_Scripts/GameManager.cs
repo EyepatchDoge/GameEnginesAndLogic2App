@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this is the gamemanager script, holds the function for when player plays again/respawns after death/shop visit
+/// and will hold the functionality for when the player acquires an ability/item to use during gameplay
+/// etc
+/// </summary>
+
 public class GameManager : MonoBehaviour
 {
     public GameObject Shop;

@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this is the main player script where the player controls the main character
+/// via touch and also holds the data fro when the player collides with asteroid
+/// via collision enter Tag recognition
+/// </summary>
+
 public class PaulPlayer : MonoBehaviour
 {
     public Rigidbody2D rb;
@@ -71,11 +77,12 @@ public class PaulPlayer : MonoBehaviour
             PlayerDead();
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Coin")
-        {
-            GameManager.instance.Points++;
-            Destroy(collision.gameObject);
-        }
+        //if player collides with coin, currency gets added, will implement later
+        //if (collision.gameObject.tag == "Coin")
+        //{
+        //    GameManager.instance.Points++;
+        //    Destroy(collision.gameObject);
+        //}
     }
 
     public void PlayerDead()
