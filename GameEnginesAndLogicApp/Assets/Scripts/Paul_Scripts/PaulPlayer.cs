@@ -9,12 +9,13 @@ public class PaulPlayer : MonoBehaviour
     public LayerMask groundDec;
     public float gDradious, flyVel;
     public Transform gDeteque;
-    public bool playerIsDed, Jump;
+    public bool Jump;
+    public GameManager GM;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerIsDed = false;
+
     }
 
     // Update is called once per frame
@@ -22,8 +23,6 @@ public class PaulPlayer : MonoBehaviour
     {
         Collider2D isGrounded = Physics2D.OverlapCircle(gDeteque.position, gDradious, groundDec);
         anime.SetBool("Grounded", isGrounded);
-        if (playerIsDed == false)
-        {
             if (Input.touchCount > 0)
             {
                 Touch myTouch = Input.GetTouch(0);
@@ -47,15 +46,11 @@ public class PaulPlayer : MonoBehaviour
             {
                 rb.velocity = Vector2.up * flyVel;
                 anime.SetBool("Flying", true);
-                //rb.gravityScale *= -1;
             }
             else
             {
                 anime.SetBool("Flying", false);
             }
-
-        }
-
     }
 
     private void OnDrawGizmosSelected()
@@ -68,27 +63,33 @@ public class PaulPlayer : MonoBehaviour
     {
         if(collision.gameObject.tag == "Asteroid")
         {
-            PlayerDead();
-            Destroy(collision.gameObject);
+            // Sets player to isKinematic and velocity to zero
+            rb.isKinematic = true;
+            rb.velocity = new Vector2 (0,0);
+            
+            // Plays death animation
+            anime.SetTrigger("Ded");
+            
+            // Disables asteroid that player collided with
+            collision.gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Coin")
         {
             GameManager.instance.Points++;
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
         }
     }
 
+    // Sets timeScale to zero, call 
     public void PlayerDead()
     {
-        anime.SetTrigger("Ded");
-        playerIsDed = true;
-        GameManager.instance.playDed = true;
+        GameManager.instance.ActivateShop();
+        Time.timeScale = 0;
     }
 
     public void BackToPlay()
     {
         anime.SetTrigger("Replay");
-        playerIsDed = false;
         GameManager.instance.playDed = false;
     }
     

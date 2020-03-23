@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6003412244125317358}
   m_Layer: 0
   m_Name: 'Asteroid '
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6003412244125317355}
-  movementDir: {x: -5, y: 0, z: 0}
+  movementDir: {x: -10, y: 0, z: 0}
 --- !u!50 &6003412244125317355
 Rigidbody2D:
   serializedVersion: 4
@@ -164,9 +164,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.19, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.38
 --- !u!58 &6003412244125317358
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -180,6 +180,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.19, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.38

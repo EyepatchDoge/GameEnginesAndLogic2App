@@ -171,7 +171,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10480677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.589899, y: -0.72873163, z: -87.94205}
+  m_LocalPosition: {x: -1.589899, y: -0.72873163, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 884745968}
@@ -1474,7 +1474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588221377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.42, y: -1.31, z: -25.965027}
+  m_LocalPosition: {x: -9.42, y: -1.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1548,7 +1548,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!212 &1840000481
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1653,8 +1653,8 @@ MonoBehaviour:
   gDradious: 0.13
   flyVel: 5
   gDeteque: {fileID: 863306449}
-  playerIsDed: 0
   Jump: 0
+  GM: {fileID: 0}
 --- !u!114 &1840000485
 MonoBehaviour:
   m_ObjectHideFlags: 0

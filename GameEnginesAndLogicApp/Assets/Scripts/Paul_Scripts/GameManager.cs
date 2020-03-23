@@ -20,15 +20,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playDed == true)
-        {
-
-            Shop.SetActive(true);
-        }
-        else if(playDed == false)
-        {
-            Shop.SetActive(false);
-        }
 
     }
 
@@ -36,5 +27,10 @@ public class GameManager : MonoBehaviour
     {
         player.BackToPlay();
         
+    }
+
+    public void ActivateShop() 
+    {
+            Shop.SetActive(true);
     }
 }
