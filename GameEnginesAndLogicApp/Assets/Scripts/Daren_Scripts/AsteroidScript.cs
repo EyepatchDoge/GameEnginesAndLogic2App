@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class AsteroidScript : MonoBehaviour
 { 
     public Rigidbody2D rb;

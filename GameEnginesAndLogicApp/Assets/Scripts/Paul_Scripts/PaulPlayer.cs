@@ -10,7 +10,7 @@ public class PaulPlayer : MonoBehaviour
     public float gDradious, flyVel;
     public Transform gDeteque;
     public bool Jump;
-    public GameManager GM;
+
 
     // Start is called before the first frame update
     void Start()
@@ -86,11 +86,4 @@ public class PaulPlayer : MonoBehaviour
         GameManager.instance.ActivateShop();
         Time.timeScale = 0;
     }
-
-    public void BackToPlay()
-    {
-        anime.SetTrigger("Replay");
-        GameManager.instance.playDed = false;
-    }
-    
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +14,25 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+
+        if (Shop != null)
+        {
+            Shop.SetActive(false);
+        }
+        
         instance = this;
-        Shop.SetActive(false);
+       
+        /*
+        if (instance != null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Object.Destroy(gameObject);
+        }
+       */
     }
 
     // Update is called once per frame
@@ -23,14 +41,17 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void KeepPlay()
+    public void StartRun()
     {
-        player.BackToPlay();
-        
+        //player.BackToPlay();
+        SceneManager.LoadScene(1);
+        Time.timeScale = 1;
+
     }
 
     public void ActivateShop() 
     {
             Shop.SetActive(true);
+
     }
 }
