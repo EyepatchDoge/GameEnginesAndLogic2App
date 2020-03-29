@@ -1325,7 +1325,6 @@ MonoBehaviour:
   Shop: {fileID: 345772221}
   playDed: 0
   Points: 0
-  player: {fileID: 1840000484}
 --- !u!4 &1343571241
 Transform:
   m_ObjectHideFlags: 0
@@ -1653,7 +1652,6 @@ MonoBehaviour:
   gDradious: 0.13
   flyVel: 5
   gDeteque: {fileID: 863306449}
-  playerIsDed: 0
   Jump: 0
 --- !u!114 &1840000485
 MonoBehaviour:
