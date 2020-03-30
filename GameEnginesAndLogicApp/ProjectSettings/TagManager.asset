@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid
   - AsteroidBoundary
+  - Shop
   layers:
   - Default
   - TransparentFX

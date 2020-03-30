@@ -5,33 +5,64 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject Shop;
-    public static GameManager instance;
+    public GameObject shop;
     public bool playDed;
     public float Points;
-
+    private Scene scene;
+    public static GameManager instance;
+    
     // Start is called before the first frame update
     void Awake()
     {
-
-        if (Shop != null)
-        {
-            Shop.SetActive(false);
-        }
-        
-        instance = this;
-
-
         if (instance != null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
         {
             Destroy(gameObject);
         }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public void OnSceneLoaded()
+    {
+        if (GameObject.FindGameObjectWithTag("Shop") == null)
+        {
+            Debug.Log("Shop does not exists");
+            return;
+        }
+        else
+        {
+            Debug.Log("Shop was found");
+            shop = GameObject.FindGameObjectWithTag("Shop");
+            shop.SetActive(false);
+        }
+    }
+ 
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
+    {
+        if (GameObject.FindGameObjectWithTag("Shop") != null)
+        {
+            Debug.Log("Shop was found");
+            shop = GameObject.FindGameObjectWithTag("Shop");
+            shop.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("Shop does not exists");
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -56,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void ActivateShop() 
     {
-        Shop.SetActive(true);
-
+        shop.SetActive(true);
+        Debug.Log("Scene was reloaded");
     }
 }
