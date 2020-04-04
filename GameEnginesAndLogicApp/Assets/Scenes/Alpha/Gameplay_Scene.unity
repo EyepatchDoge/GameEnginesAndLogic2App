@@ -824,13 +824,13 @@ MonoBehaviour:
   sounds:
   - name: PauseButton
     clip: {fileID: 8300000, guid: 40d838c181e90c14dbd13c61a9a469da, type: 3}
-    volume: 3
-    pitch: 0.1
+    volume: 7.4
+    pitch: 2.1
     source: {fileID: 0}
   - name: ResumeButton
-    clip: {fileID: 8300000, guid: 542537b8a2df21e46a3f4b051469a8f6, type: 3}
-    volume: 2.4
-    pitch: 0.1
+    clip: {fileID: 8300000, guid: 54491cf5876d0d144a0352826fdb3a4f, type: 3}
+    volume: 2
+    pitch: 3
     source: {fileID: 0}
 --- !u!4 &531750240
 Transform:
