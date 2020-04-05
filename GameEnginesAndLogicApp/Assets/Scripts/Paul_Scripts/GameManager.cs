@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class GameManager : MonoBehaviour
     public float Points;
     private Scene scene;
     public static GameManager instance;
+
+    public InGameCurrencySO spaceCoins;
+    public Text coinsAmount;
     
     // Start is called before the first frame update
     void Awake()
@@ -23,6 +27,8 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+
+        coinsAmount.text = spaceCoins.currencyAmount.ToString();
     }
 
     void OnEnable()
