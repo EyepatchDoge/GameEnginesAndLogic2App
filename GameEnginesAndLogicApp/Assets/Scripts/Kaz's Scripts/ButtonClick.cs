@@ -11,15 +11,15 @@ public class ButtonClick : MonoBehaviour
 {
 
     public InGameCurrencySO spaceCoins;
-    // public Text coinAmount;
+     public Text coinAmount;
     // coinAmount.text = spaceMoney.currencyAmount.ToString();
 
-    public void PurchaseFiftyCoins()
+    public void PurchaseCoins(int amount)
     {
-        spaceCoins.currencyAmount += 50;
-        // coinAmount.text = spaceMoney.currencyAmount.ToString();
+        spaceCoins.currencyAmount += amount;
+         coinAmount.text = spaceCoins.currencyAmount.ToString();
     }
 
-   
+ 
 
 }

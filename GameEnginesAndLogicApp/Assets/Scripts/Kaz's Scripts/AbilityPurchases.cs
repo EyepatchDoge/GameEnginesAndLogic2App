@@ -12,7 +12,7 @@ public class AbilityPurchases : MonoBehaviour
 {
     public InGameCurrencySO spaceMoney;
     public AbilityManager aManager;
-   // public Text coinAmount;
+   public Text coinAmount;
 
     public void BuyAbility(AbilitySO SO)
     {
@@ -25,7 +25,7 @@ public class AbilityPurchases : MonoBehaviour
             //and take away the money that is owed
             spaceMoney.currencyAmount -= SO.cost;
 
-           // coinAmount.text = spaceMoney.currencyAmount.ToString();
+           coinAmount.text = spaceMoney.currencyAmount.ToString();
 
         }
     }
