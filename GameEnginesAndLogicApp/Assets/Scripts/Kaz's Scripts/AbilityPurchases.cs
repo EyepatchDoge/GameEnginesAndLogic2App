@@ -16,10 +16,13 @@ public class AbilityPurchases : MonoBehaviour
 
     public void BuyAbility(AbilitySO SO)
     {
+        //if the player has enough money as specified in the SO,  
         if(spaceMoney.currencyAmount >= SO.cost)
         {
+            //make the ability turn to true so it is useable once the game starts
             aManager.UpdateDictonary(SO, true);
 
+            //and take away the money that is owed
             spaceMoney.currencyAmount -= SO.cost;
 
            // coinAmount.text = spaceMoney.currencyAmount.ToString();

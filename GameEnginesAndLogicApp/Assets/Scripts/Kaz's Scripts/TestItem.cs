@@ -24,11 +24,10 @@ public class TestItem : MonoBehaviour, IAbility
             Destroy(gameObject, celeberation.clip.length);
     }
 
-
-    public void UseAbility()
-    {
-        PlayCelebrationClip();
-    }
+     public void UseAbility()
+     {
+         PlayCelebrationClip();
+     }
 
 
 }
