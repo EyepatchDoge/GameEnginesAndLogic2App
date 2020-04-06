@@ -33,12 +33,13 @@ public class AbilityPurchases : MonoBehaviour
 
         }
 
-        if(spaceMoney.currencyAmount < SO.cost)
+        else if(spaceMoney.currencyAmount < SO.cost)
         {
             warningText.text = "You do not have enough money, please puchase more, play more or watch an ad";
         }
 
-        if(aManager.abilityDictionary[SO] == true)
+
+        else if(aManager.abilityDictionary[SO] == true)
         {
             warningText.text = "You have already purchased this ability";
         }

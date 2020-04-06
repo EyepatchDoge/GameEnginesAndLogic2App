@@ -21,7 +21,7 @@ public class AbilityManager : MonoBehaviour
     private void Awake()
     {
         InitializeDictionary();
-        SetAbilitiesToFalse();
+        
     }
 
     private void InitializeDictionary()
@@ -36,6 +36,8 @@ public class AbilityManager : MonoBehaviour
             {
                 //add it and make sure it is set to false (so it will not run)
                 abilityDictionary.Add(variable, false);
+
+                Debug.Log("The " + variable.name + " is set to " + abilityDictionary[variable]);
             }
         }
     }
@@ -46,16 +48,7 @@ public class AbilityManager : MonoBehaviour
         abilityDictionary[ability] = value;
     }
 
-    public void SetAbilitiesToFalse()
-    {
-        foreach (var ability in abilityDictionary)
-        {
-            if (ability.Value == true)
-            {
-                UpdateDictonary(ability.Key, false);
-            }
-        }
-    }
+   
 
 
     //reference from test script sent to here to use it in the purchasing script
@@ -68,14 +61,25 @@ public class AbilityManager : MonoBehaviour
     [ContextMenu("Apply Abilities")]
     public void ApplyAbilities()
     {
+        List<AbilitySO> tempList = new List<AbilitySO>();
+
         foreach (var ability in abilityDictionary)
         {
             if(ability.Value == true)
             {
                 GameObject go = Instantiate(ability.Key.scriptPrefab);
                 go.GetComponent<IAbility>().UseAbility();
-                UpdateDictonary(ability.Key, false);
+                //UpdateDictonary(ability.Key, false);
+                tempList.Add(ability.Key);
+
+                
             }
+        }
+
+        foreach (var ability in tempList)
+        {
+            UpdateDictonary(ability, false);
+            Debug.Log("The " + ability.name + " is set to " + abilityDictionary[ability]);
         }
     }
 }
