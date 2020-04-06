@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float Points;
     private Scene scene;
     public static GameManager instance;
+    public AbilityManager aManager;
 
     public InGameCurrencySO spaceCoins;
     public Text coinsAmount;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         
 
         coinsAmount.text = spaceCoins.currencyAmount.ToString();
+
     }
 
     public void Start()

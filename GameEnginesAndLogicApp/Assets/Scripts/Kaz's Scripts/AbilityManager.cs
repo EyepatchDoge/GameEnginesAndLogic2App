@@ -21,6 +21,7 @@ public class AbilityManager : MonoBehaviour
     private void Awake()
     {
         InitializeDictionary();
+        SetAbilitiesToFalse();
     }
 
     private void InitializeDictionary()
@@ -43,6 +44,17 @@ public class AbilityManager : MonoBehaviour
     public void UpdateDictonary(AbilitySO ability, bool value)
     {
         abilityDictionary[ability] = value;
+    }
+
+    public void SetAbilitiesToFalse()
+    {
+        foreach (var ability in abilityDictionary)
+        {
+            if (ability.Value == true)
+            {
+                UpdateDictonary(ability.Key, false);
+            }
+        }
     }
 
 
