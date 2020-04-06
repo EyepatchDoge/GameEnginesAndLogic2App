@@ -876,33 +876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins100
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919790373}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &372097409
 GameObject:
   m_ObjectHideFlags: 0
@@ -3592,33 +3565,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins50
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919790373}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &1819721991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,7 +3684,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.4, y: 3.4}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 3.4, y: 3.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -3811,7 +3757,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 3.4, y: 3.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4572,18 +4518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e39c4f7f7d9d24999c248bdf625c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1919790373 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7501078304196668120, guid: ccc985a83fbb83c438bcc38f1da577ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 4135624658811587953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc378c15c5e3a041b14a52659a8176e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1978639167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,33 +4888,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins500
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1919790373}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &2044939750
 GameObject:
   m_ObjectHideFlags: 0
@@ -6908,6 +6815,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 565940701832312196, guid: 8da9dace8c5351b4a9550fcef08a4cef,
+        type: 3}
+      propertyPath: CydLight
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 565940701832312197, guid: 8da9dace8c5351b4a9550fcef08a4cef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6921,7 +6833,7 @@ PrefabInstance:
     - target: {fileID: 565940701832312197, guid: 8da9dace8c5351b4a9550fcef08a4cef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1072.3251
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 565940701832312197, guid: 8da9dace8c5351b4a9550fcef08a4cef,
         type: 3}
@@ -6976,6 +6888,79 @@ PrefabInstance:
       objectReference: {fileID: 614936285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8da9dace8c5351b4a9550fcef08a4cef, type: 3}
+--- !u!1001 &1685059063296987130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2010799540576544161, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_Name
+      value: Cydonia'sLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2549509606498125017, guid: 854321da631ab094581edcf78dac11ea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2032405716, guid: 854321da631ab094581edcf78dac11ea, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1840000482}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 854321da631ab094581edcf78dac11ea, type: 3}
 --- !u!114 &3329412959847800319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7015,6 +7000,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonClick_UseThis
       objectReference: {fileID: 0}
+    - target: {fileID: 7501078304196668120, guid: ccc985a83fbb83c438bcc38f1da577ef,
+        type: 3}
+      propertyPath: coinAmount
+      value: 
+      objectReference: {fileID: 614936285}
     - target: {fileID: 8890703255467222133, guid: ccc985a83fbb83c438bcc38f1da577ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7070,11 +7060,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7501078304196668120, guid: ccc985a83fbb83c438bcc38f1da577ef,
-        type: 3}
-      propertyPath: coinAmount
-      value: 
-      objectReference: {fileID: 614936285}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc985a83fbb83c438bcc38f1da577ef, type: 3}
 --- !u!114 &4741845141162022535

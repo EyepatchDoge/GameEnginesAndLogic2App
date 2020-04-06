@@ -7,7 +7,7 @@ public class LightAbility : MonoBehaviour, IAbility
 
     public void ProtectTheGhild()
     {
-        CydoniaLight.instance.Summon();
+        GameManager.instance.TurnOnShine();
     }
 
     public void UseAbility()

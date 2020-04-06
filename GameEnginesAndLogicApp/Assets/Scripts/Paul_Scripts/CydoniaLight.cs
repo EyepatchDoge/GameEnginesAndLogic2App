@@ -6,22 +6,27 @@ public class CydoniaLight : MonoBehaviour
 {
     public Transform target;
     public float hoam = 50;
-    public static CydoniaLight instance;
-
-    public void Start()
-    {
-        StartCoroutine(LightTimer());
-    }
+    public static bool Shine;
+    //public CircleCollider2D cirCollid;
+    //public SpriteRenderer sp;
 
     private void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
 
+        if (Shine == true)
+        {
+            Summon();
+        }
     }
 
     public void Summon()
     {
-        this.gameObject.SetActive(true);
+        //cirCollid.enabled = true;
+        //sp.enabled = true;
+        //this.gameObject.SetActive(true);
+        StartCoroutine(LightTimer());
+        
     }
 
     IEnumerator LightTimer()

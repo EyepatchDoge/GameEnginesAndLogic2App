@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject shop;
+    public GameObject shop, CydLight;
     public bool playDed;
     public float Points;
     private Scene scene;
@@ -69,12 +69,39 @@ public class GameManager : MonoBehaviour
             Debug.Log("Shop does not exists");
             return;
         }
+        if(GameObject.FindGameObjectWithTag("Light") != null)
+        {
+            Debug.Log("Light was found");
+            CydLight = GameObject.FindGameObjectWithTag("Light");
+            CydLight.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("light was MIA");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //for testing the light out
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            CydLight.SetActive(true);
+            CydoniaLight.Shine = true;
+        }
+    }
 
+    public void PlayerArmmoured()
+    {
+        Debug.Log("player is Armoured");
+        PaulPlayer.Protection = true;
+    }
+
+    public void TurnOnShine()
+    {
+        CydLight.SetActive(true);
+        CydoniaLight.Shine = true;
     }
 
     public void StartRun()

@@ -7,7 +7,7 @@ public class ArmourAbility : MonoBehaviour, IAbility
 
     public void Armour()
     {
-        //PaulPlayer.instance.Protection = true;
+        GameManager.instance.PlayerArmmoured();
     }
 
     public void UseAbility()
