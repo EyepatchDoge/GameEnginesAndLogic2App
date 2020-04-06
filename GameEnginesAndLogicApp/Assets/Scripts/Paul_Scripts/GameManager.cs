@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject shop, CydLight;
-    public bool playDed;
+    public bool playDed, cydActive, armourActive;
     public float Points;
     private Scene scene;
     public static GameManager instance;
@@ -27,8 +27,23 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        
 
         coinsAmount.text = spaceCoins.currencyAmount.ToString();
+    }
+
+    public void Start()
+    {
+        if (cydActive == true)
+        {
+            CydLight.SetActive(true);
+            CydoniaLight.Shine = true;
+        }
+        if(armourActive == true)
+        {
+            Debug.Log("player is Armoured");
+            PaulPlayer.Protection = true;
+        }
     }
 
     void OnEnable()
@@ -73,7 +88,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Light was found");
             CydLight = GameObject.FindGameObjectWithTag("Light");
-            CydLight.SetActive(false);
+            //CydLight.SetActive(false);
         }
         else
         {
@@ -85,23 +100,21 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //for testing the light out
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            CydLight.SetActive(true);
-            CydoniaLight.Shine = true;
-        }
+        //if (Input.GetKeyDown(KeyCode.P))
+        //{
+        //    CydLight.SetActive(true);
+        //    CydoniaLight.Shine = true;
+        //}
     }
 
     public void PlayerArmmoured()
     {
-        Debug.Log("player is Armoured");
-        PaulPlayer.Protection = true;
+        armourActive = true;
     }
 
     public void TurnOnShine()
     {
-        CydLight.SetActive(true);
-        CydoniaLight.Shine = true;
+        cydActive = true;
     }
 
     public void StartRun()
@@ -120,6 +133,8 @@ public class GameManager : MonoBehaviour
 
     public void ActivateShop() 
     {
+        armourActive = false;
+        cydActive = false;
         shop.SetActive(true);
         Debug.Log("Scene was reloaded");
     }
