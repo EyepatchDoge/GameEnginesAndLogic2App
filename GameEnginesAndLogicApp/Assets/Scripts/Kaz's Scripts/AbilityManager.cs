@@ -11,6 +11,8 @@ using UnityEngine;
 
 public class AbilityManager : MonoBehaviour
 {
+    //public static AbilityManager instance;
+
     public TestItem testI; //test ability script 
 
     public Dictionary<AbilitySO, bool> abilityDictionary = new Dictionary<AbilitySO, bool>();
@@ -20,6 +22,19 @@ public class AbilityManager : MonoBehaviour
 
     private void Awake()
     {
+        #region Singleton Implementation (Disabled)
+        /*
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }*/
+        #endregion
+
         InitializeDictionary();
         
     }
@@ -46,6 +61,7 @@ public class AbilityManager : MonoBehaviour
     public void UpdateDictonary(AbilitySO ability, bool value)
     {
         abilityDictionary[ability] = value;
+        
     }
 
    
