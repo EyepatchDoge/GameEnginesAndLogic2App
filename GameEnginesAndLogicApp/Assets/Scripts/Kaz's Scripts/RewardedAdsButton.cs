@@ -9,7 +9,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsListener
 #if UNITY_IOS
     private string gameId = "3513910";
 #elif UNITY_ANDROID
-    private string gameId = "3513911";
+    private string gameId= "3513911";
 #endif
 
     public Button myButton;
