@@ -555,16 +555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0846771c1e43fe4bb6849d99073d6a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shop: {fileID: 0}
-  player: {fileID: 0}
+  Shop: {fileID: 0}
   playDed: 0
-  cydActive: 0
-  armourActive: 0
   Points: 0
-  aManager: {fileID: 0}
-  aManagerScript: {fileID: 0}
-  spaceCoins: {fileID: 0}
-  coinsAmount: {fileID: 0}
 --- !u!4 &1637451962
 Transform:
   m_ObjectHideFlags: 0
@@ -662,7 +655,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1637451961}
-        m_MethodName: StartGame
+        m_MethodName: StartRun
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
