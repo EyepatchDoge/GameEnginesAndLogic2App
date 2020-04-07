@@ -11,6 +11,14 @@ public class PaulPlayer : MonoBehaviour
     public Transform gDeteque;
     public bool Jump;
     public static bool Protection;
+    public GameObject abilityManager;
+    public AbilityManager abilityManagerScript;
+
+    void Start()
+    {
+        abilityManager = GameObject.Find("AbilityManager");
+        abilityManagerScript = abilityManager.GetComponent<AbilityManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -111,5 +119,16 @@ public class PaulPlayer : MonoBehaviour
     {
         GameManager.instance.ActivateShop();
         Time.timeScale = 0;
+    }
+
+    public void StartRun()
+    {
+        Time.timeScale = 1;
+        rb.isKinematic = false;
+        anime.SetTrigger("Replay");
+        abilityManagerScript.ApplyAbilities();
+
+        //shop.SetActive(false);
+        //SceneManager.LoadScene(1);
     }
 }

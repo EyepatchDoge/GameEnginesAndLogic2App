@@ -26,9 +26,5 @@ public class AsteroidScript : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        else if(other.tag == "Light")
-        {
-            gameObject.SetActive(false);
-        }
     }
 }

@@ -2,21 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CydoniaLight : MonoBehaviour
+public class CydoniaLight : MonoBehaviour, IAbility
 {
-    public Transform target;
+    //public Transform target;
+    
     public float hoam = 50;
     public static bool Shine;
+    
     //public CircleCollider2D cirCollid;
     //public SpriteRenderer sp;
 
     private void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
+            Debug.Log("do do");
 
         if (Shine == true)
         {
-            Summon();
+            //Summon();
+        }
+    }
+
+    void OnTriggerEnter2D (Collider2D other)
+    {
+        if (enabled)
+        {
+            if (other.gameObject.tag == "Asteroid")
+            {
+                other.gameObject.SetActive(false);
+            }
         }
     }
 
@@ -31,7 +44,14 @@ public class CydoniaLight : MonoBehaviour
 
     IEnumerator LightTimer()
     {
-        yield return new WaitForSeconds(90f);
+        yield return new WaitForSeconds(9f);
         this.gameObject.SetActive(false);
+    }
+
+    public void UseAbility()
+    {
+        
+        GameManager.instance.TurnOnShine();
+        GameManager.instance.cydActive = true;
     }
 }

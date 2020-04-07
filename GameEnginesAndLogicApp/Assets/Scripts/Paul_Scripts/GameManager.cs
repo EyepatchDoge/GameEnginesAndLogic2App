@@ -6,16 +6,20 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject shop, CydLight;
+    #region Variables
+    public GameObject shop, player;
+    public PaulPlayer playerScript;
     public bool playDed, cydActive, armourActive;
     public float Points;
     private Scene scene;
     public static GameManager instance;
-    public AbilityManager aManager;
+    public GameObject aManager;
+    public AbilityManager aManagerScript;
 
     public InGameCurrencySO spaceCoins;
     public Text coinsAmount;
-    
+    #endregion
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,22 +34,8 @@ public class GameManager : MonoBehaviour
         }
         
 
-        coinsAmount.text = spaceCoins.currencyAmount.ToString();
+        //coinsAmount.text = spaceCoins.currencyAmount.ToString();
 
-    }
-
-    public void Start()
-    {
-        if (cydActive == true)
-        {
-            CydLight.SetActive(true);
-            CydoniaLight.Shine = true;
-        }
-        if(armourActive == true)
-        {
-            Debug.Log("player is Armoured");
-            PaulPlayer.Protection = true;
-        }
     }
 
     void OnEnable()
@@ -58,8 +48,21 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    public void OnSceneLoaded()
+    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
+        #region Gets Reference to AbilityManager (Disabled)
+        /*if(GameObject.Find("AbilityManager") == null)
+        {
+            Debug.Log("AbilityManager does not exists");
+        }
+        else
+        {
+            aManager = GameObject.Find("AbilityManager");
+            aManagerScript = aManager.GetComponent<AbilityManager>();
+        }*/
+        #endregion
+
+        #region Checks for shop in each loaded scene
         if (GameObject.FindGameObjectWithTag("Shop") == null)
         {
             Debug.Log("Shop does not exists");
@@ -71,42 +74,44 @@ public class GameManager : MonoBehaviour
             shop = GameObject.FindGameObjectWithTag("Shop");
             shop.SetActive(false);
         }
-    }
- 
-    private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
-    {
-        if (GameObject.FindGameObjectWithTag("Shop") != null)
+        #endregion
+
+        #region Looks for player in loaded scene
+        if (GameObject.FindGameObjectWithTag("Player") == null)
         {
-            Debug.Log("Shop was found");
-            shop = GameObject.FindGameObjectWithTag("Shop");
-            shop.SetActive(false);
+            Debug.Log("Player not found in scene");
         }
         else
         {
-            Debug.Log("Shop does not exists");
-            return;
+            player = GameObject.FindGameObjectWithTag("Player");
+            playerScript = player.GetComponent<PaulPlayer>();
         }
-        if(GameObject.FindGameObjectWithTag("Light") != null)
+        #endregion
+
+        #region Finds references for Cydonia's Light (Disabled)
+        /*if (GameObject.FindGameObjectWithTag("Light") != null)
         {
             Debug.Log("Light was found");
             CydLight = GameObject.FindGameObjectWithTag("Light");
-            //CydLight.SetActive(false);
         }
         else
         {
             Debug.Log("light was MIA");
-        }
-    }
+        }*/
+        #endregion
 
-    // Update is called once per frame
-    void Update()
-    {
-        //for testing the light out
-        //if (Input.GetKeyDown(KeyCode.P))
-        //{
-        //    CydLight.SetActive(true);
-        //    CydoniaLight.Shine = true;
-        //}
+        #region Checks for ability purchases
+        if (cydActive == true)
+        {
+            player.GetComponent<CydoniaLight>().enabled = true;
+            //CydoniaLight.Shine = true;
+        }
+        if (armourActive == true)
+        {
+            Debug.Log("player is Armoured");
+            PaulPlayer.Protection = true;
+        }
+        #endregion
     }
 
     public void PlayerArmmoured()
@@ -119,12 +124,10 @@ public class GameManager : MonoBehaviour
         cydActive = true;
     }
 
-    public void StartRun()
+    public void StartGame()
     {
-        //player.BackToPlay();
-        SceneManager.LoadScene(1);
         Time.timeScale = 1;
-
+        SceneManager.LoadScene(1);
     }
 
     public void BackToTitle()
