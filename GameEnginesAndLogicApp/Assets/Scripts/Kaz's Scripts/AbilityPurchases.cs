@@ -20,7 +20,7 @@ public class AbilityPurchases : MonoBehaviour
         //if the player has enough money as specified in the SO,  
         if(spaceMoney.currencyAmount >= SO.cost && aManager.abilityDictionary[SO] == false)
         {
-
+            FindObjectOfType<AudioManager>().Play("Purchase");
             warningText.text = ("You have purchased the " + SO.name);
            
             //make the ability turn to true so it is useable once the game starts

@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 497267257}
   - component: {fileID: 497267256}
   m_Layer: 5
-  m_Name: armourability
+  m_Name: Armour ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1197,17 +1197,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 7a12adf96eb4b894e86a4011ac2021b8,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: AbilitySO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1387083368}
-        m_MethodName: Purchase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1566,11 +1555,6 @@ MonoBehaviour:
     volume: 2
     pitch: 2
     source: {fileID: 0}
-  - name: Purchase
-    clip: {fileID: 8300000, guid: 3d8680275583ec540bc4c3cec05f45b2, type: 3}
-    volume: 2
-    pitch: 2.5
-    source: {fileID: 0}
   - name: Shop1
     clip: {fileID: 8300000, guid: a771c15fbb413e941ba0b1f92ed8311d, type: 3}
     volume: 2
@@ -1589,6 +1573,11 @@ MonoBehaviour:
   - name: Asteroid
     clip: {fileID: 8300000, guid: 39dcc7f50793f9f4dafc9b43ab5eeeb7, type: 3}
     volume: 3
+    pitch: 1
+    source: {fileID: 0}
+  - name: Purchase
+    clip: {fileID: 8300000, guid: 3d8680275583ec540bc4c3cec05f45b2, type: 3}
+    volume: 3.5
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &531750240
@@ -3080,7 +3069,7 @@ GameObject:
   - component: {fileID: 1087104384}
   - component: {fileID: 1087104383}
   m_Layer: 5
-  m_Name: light ability
+  m_Name: Light ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3156,17 +3145,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 8ee1142dbf538ac4f86225e1ed6568c2,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: AbilitySO, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1387083368}
-        m_MethodName: Purchase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
