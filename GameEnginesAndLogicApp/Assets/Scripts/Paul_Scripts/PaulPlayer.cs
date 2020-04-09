@@ -11,13 +11,13 @@ public class PaulPlayer : MonoBehaviour
     public Transform gDeteque;
     public bool Jump;
     public static bool Protection;
-    public GameObject abilityManager;
-    public AbilityManager abilityManagerScript;
+    //public GameObject abilityManager;
+    public AbilityManager aManager;
 
     void Start()
     {
-        abilityManager = GameObject.Find("AbilityManager");
-        abilityManagerScript = abilityManager.GetComponent<AbilityManager>();
+        aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
+        
     }
 
     // Update is called once per frame
@@ -55,12 +55,6 @@ public class PaulPlayer : MonoBehaviour
         {
             anime.SetBool("isArmoured", false);
         }
-
-        //for testing if the protection stuff works
-        //if (Input.GetKeyDown(KeyCode.G))
-        //{
-        //    Protection = true;
-        //}
 
         //this is for testing purposes but does the same thing
         if (Input.GetKey(KeyCode.A))
@@ -126,9 +120,7 @@ public class PaulPlayer : MonoBehaviour
         Time.timeScale = 1;
         rb.isKinematic = false;
         anime.SetTrigger("Replay");
-        abilityManagerScript.ApplyAbilities();
+        //aManager.ApplyAbilities();
 
-        //shop.SetActive(false);
-        //SceneManager.LoadScene(1);
     }
 }

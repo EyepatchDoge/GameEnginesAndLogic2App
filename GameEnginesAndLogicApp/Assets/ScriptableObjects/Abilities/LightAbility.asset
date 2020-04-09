@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LightAbility
   m_EditorClassIdentifier: 
   cost: 35
-  scriptPrefab: {fileID: 1919964982027285810, guid: 9efab2cd23ad84d4683416c70232b72d,
+  scriptPrefab: {fileID: 2010799540576544161, guid: 854321da631ab094581edcf78dac11ea,
     type: 3}
