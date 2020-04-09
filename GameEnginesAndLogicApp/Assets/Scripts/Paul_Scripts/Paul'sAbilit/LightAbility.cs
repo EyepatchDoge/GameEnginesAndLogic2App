@@ -7,7 +7,7 @@ public class LightAbility : MonoBehaviour, IAbility
 
     public void ProtectTheGhild()
     {
-        GameManager.instance.TurnOnShine();
+        //catawampus
     }
 
     public void UseAbility()

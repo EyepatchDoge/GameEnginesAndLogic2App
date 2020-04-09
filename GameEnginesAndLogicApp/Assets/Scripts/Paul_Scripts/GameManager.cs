@@ -7,15 +7,13 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     #region Variables
-    public GameObject shop, player;
-    public PaulPlayer playerScript;
-    public bool playDed, cydActive, armourActive;
+    public GameObject shop;
+    public PaulPlayer player;
+    public bool playDed; //cydActive, armourActive;
     public float Points;
     private Scene scene;
     public static GameManager instance;
-    public GameObject aManager;
-    public AbilityManager aManagerScript;
-
+    public AbilityManager aManager;
     public InGameCurrencySO spaceCoins;
     public Text coinsAmount;
     #endregion
@@ -32,10 +30,10 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        
+
 
         //coinsAmount.text = spaceCoins.currencyAmount.ToString();
-
+        aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
     }
 
     void OnEnable()
@@ -83,8 +81,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            playerScript = player.GetComponent<PaulPlayer>();
+            player = GameObject.FindGameObjectWithTag("Player").GetComponent<PaulPlayer>();
+            
         }
         #endregion
 
@@ -101,33 +99,38 @@ public class GameManager : MonoBehaviour
         #endregion
 
         #region Checks for ability purchases
-        if (cydActive == true)
-        {
-            player.GetComponent<CydoniaLight>().enabled = true;
-            //CydoniaLight.Shine = true;
-        }
-        if (armourActive == true)
-        {
-            Debug.Log("player is Armoured");
-            PaulPlayer.Protection = true;
-        }
+        //if (cydActive == true)
+        //{
+        //    //player.GetComponent<CydoniaLight>().enabled = true;
+        //    //CydoniaLight.Shine = true;
+        //}
+        //if (armourActive == true)
+        //{
+        //    Debug.Log("player is Armoured");
+        //    PaulPlayer.Protection = true;
+        //}
         #endregion
     }
-
+    //switched the armour ability from being apart of player's animations to just a simple gameobject :)
     public void PlayerArmmoured()
     {
-        armourActive = true;
+        Debug.Log("its dangerous to go raw use pretection");
+        //armourActive = true;
+        //TempArmour.SetActive(true);
     }
 
     public void TurnOnShine()
     {
-        cydActive = true;
+        Debug.Log("God said turn the lights on");
+        //cydActive = true;
     }
 
     public void StartGame()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        Debug.Log("Game started");
+        //Time.timeScale = 1;
+        //SceneManager.LoadScene(1);
+        aManager.ApplyAbilities();
     }
 
     public void BackToTitle()
@@ -138,8 +141,7 @@ public class GameManager : MonoBehaviour
 
     public void ActivateShop() 
     {
-        armourActive = false;
-        cydActive = false;
+        
         shop.SetActive(true);
         Debug.Log("Scene was reloaded");
     }
