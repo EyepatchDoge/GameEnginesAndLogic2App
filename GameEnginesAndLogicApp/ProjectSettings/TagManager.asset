@@ -9,6 +9,7 @@ TagManager:
   - Shop
   - Light
   - AbilityManager
+  - ArmourTran
   layers:
   - Default
   - TransparentFX

@@ -9,14 +9,23 @@ public class CydoniaLight : MonoBehaviour, IAbility
     public CircleCollider2D cirCollid;
     public SpriteRenderer sp;
 
+    public void Start()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            Debug.Log("Light has found the player");
+        }
+    }
+
     public void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
 
-        if(target == null)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        }
+        //if(target == null)
+        //{
+        //    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //}
         
     }
 
@@ -32,7 +41,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     public void Summon()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         StartCoroutine(LightTimer());
         cirCollid.enabled = true;
         sp.enabled = true;
@@ -41,7 +50,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     IEnumerator LightTimer()
     {
-        yield return new WaitForSeconds(9f);
+        yield return new WaitForSeconds(90f);
         cirCollid.enabled = false;
         sp.enabled = false;
     }

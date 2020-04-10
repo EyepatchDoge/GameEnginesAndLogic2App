@@ -9,14 +9,19 @@ public class ArmourAbility : MonoBehaviour, IAbility
     public GameObject Shield;
     public BoxCollider2D cirCollid;
 
+    public void Start()
+    {
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("ArmourTran").GetComponent<Transform>();
+            Debug.Log("player was found");
+        }
+    }
+
     public void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
-        if(target == null)
-        {
-            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-            Debug.Log("player was found");
-        }
+        
         
     }
 
@@ -26,6 +31,7 @@ public class ArmourAbility : MonoBehaviour, IAbility
         {
             other.gameObject.SetActive(false);
             Shield.SetActive(false);
+            cirCollid.enabled = false;
         }
     }
 
@@ -33,7 +39,7 @@ public class ArmourAbility : MonoBehaviour, IAbility
     {
         Shield.SetActive(true);
         cirCollid.enabled = true;
-        
+        target = GameObject.FindGameObjectWithTag("ArmourTran").GetComponent<Transform>();
     }
 
     public void UseAbility()

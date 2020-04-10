@@ -130,5 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b19656fb70d7c942988cb21e0bd7fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoam: 99999
+  target: {fileID: 0}
   cirCollid: {fileID: 4947106975302930772}
   sp: {fileID: 854023073576504770}
