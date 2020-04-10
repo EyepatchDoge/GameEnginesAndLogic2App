@@ -33,7 +33,11 @@ public class GameManager : MonoBehaviour
 
 
         //coinsAmount.text = spaceCoins.currencyAmount.ToString();
-        //aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
+        //if(aManager == null)
+        //{
+        //    aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
+        //}
+
     }
 
     void OnEnable()
@@ -134,6 +138,7 @@ public class GameManager : MonoBehaviour
         {
             aManager.ApplyAbilities();
         }
+              
         
     }
 

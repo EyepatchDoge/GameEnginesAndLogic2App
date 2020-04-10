@@ -20,7 +20,7 @@ public class ArmourAbility : MonoBehaviour, IAbility
         
     }
 
-    public void OnTriggerEnter2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Asteroid")
         {
