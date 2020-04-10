@@ -4,14 +4,27 @@ using UnityEngine;
 
 public class ArmourAbility : MonoBehaviour, IAbility
 {
+    public float hoam = 50;
+    public Transform target;
     public GameObject Shield;
     public BoxCollider2D cirCollid;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void Update()
     {
-        if(collision.gameObject.tag == "Asteroid")
+        transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
+        if(target == null)
         {
-            collision.gameObject.SetActive(false);
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+            Debug.Log("player was found");
+        }
+        
+    }
+
+    public void OnTriggerEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "Asteroid")
+        {
+            other.gameObject.SetActive(false);
             Shield.SetActive(false);
         }
     }
@@ -20,7 +33,7 @@ public class ArmourAbility : MonoBehaviour, IAbility
     {
         Shield.SetActive(true);
         cirCollid.enabled = true;
-        //GameManager.instance.PlayerArmmoured();
+        
     }
 
     public void UseAbility()

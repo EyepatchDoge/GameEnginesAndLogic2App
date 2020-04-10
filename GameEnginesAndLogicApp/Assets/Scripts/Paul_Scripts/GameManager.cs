@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
 
         //coinsAmount.text = spaceCoins.currencyAmount.ToString();
-        aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
+        //aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
     }
 
     void OnEnable()
@@ -49,15 +49,15 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene aScene, LoadSceneMode aMode)
     {
         #region Gets Reference to AbilityManager (Disabled)
-        /*if(GameObject.Find("AbilityManager") == null)
+        if(GameObject.FindGameObjectWithTag("AbilityManager") == null)
         {
             Debug.Log("AbilityManager does not exists");
         }
         else
         {
-            aManager = GameObject.Find("AbilityManager");
-            aManagerScript = aManager.GetComponent<AbilityManager>();
-        }*/
+            aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
+            Debug.Log("AbilityManager does exists");
+        }
         #endregion
 
         #region Checks for shop in each loaded scene
@@ -128,9 +128,13 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Game started");
-        //Time.timeScale = 1;
-        //SceneManager.LoadScene(1);
-        aManager.ApplyAbilities();
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+        if(aManager != null)
+        {
+            aManager.ApplyAbilities();
+        }
+        
     }
 
     public void BackToTitle()

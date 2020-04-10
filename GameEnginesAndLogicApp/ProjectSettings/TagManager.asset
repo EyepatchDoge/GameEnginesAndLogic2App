@@ -8,6 +8,7 @@ TagManager:
   - AsteroidBoundary
   - Shop
   - Light
+  - AbilityManager
   layers:
   - Default
   - TransparentFX

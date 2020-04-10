@@ -662,7 +662,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 0708c42db80d8fb4dbd0b50579544e2f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -953,13 +953,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shop: {fileID: 0}
   player: {fileID: 0}
-  playerScript: {fileID: 0}
   playDed: 0
-  cydActive: 0
-  armourActive: 0
   Points: 0
   aManager: {fileID: 0}
-  aManagerScript: {fileID: 0}
   spaceCoins: {fileID: 0}
   coinsAmount: {fileID: 0}
 --- !u!4 &1637451962
@@ -1321,7 +1317,7 @@ MonoBehaviour:
   sounds:
   - name: Start
     clip: {fileID: 8300000, guid: a862d82995adbd7498e85101c0e0ac53, type: 3}
-    volume: 3
+    volume: 1.8
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &2117108100

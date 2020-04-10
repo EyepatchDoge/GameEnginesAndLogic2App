@@ -4,9 +4,21 @@ using UnityEngine;
 
 public class CydoniaLight : MonoBehaviour, IAbility
 {
-    
+    public float hoam = 50;
+    public Transform target;
     public CircleCollider2D cirCollid;
     public SpriteRenderer sp;
+
+    public void Update()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
+
+        if(target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
+        
+    }
 
     void OnTriggerEnter2D (Collider2D other)
     {

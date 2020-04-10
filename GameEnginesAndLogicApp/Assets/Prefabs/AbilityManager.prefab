@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5025891200133046519}
   m_Layer: 0
   m_Name: AbilityManager
-  m_TagString: Untagged
+  m_TagString: AbilityManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,3 +46,5 @@ MonoBehaviour:
   testI: {fileID: 0}
   abilitySOs:
   - {fileID: 11400000, guid: 9a161eb44a4bf574ab5f5f10aa79a675, type: 2}
+  - {fileID: 11400000, guid: 7a12adf96eb4b894e86a4011ac2021b8, type: 2}
+  - {fileID: 11400000, guid: 8ee1142dbf538ac4f86225e1ed6568c2, type: 2}
