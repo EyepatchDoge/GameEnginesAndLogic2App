@@ -73,7 +73,7 @@ public class PaulPlayer : MonoBehaviour
             {
                 // Sets player to isKinematic and velocity to zero
                 rb.isKinematic = true;
-                rb.velocity = new Vector2(0, 0);
+                rb.velocity = Vector2.zero;
 
                 // Plays death animation
                 anime.SetTrigger("Ded");
@@ -90,6 +90,7 @@ public class PaulPlayer : MonoBehaviour
     public void PlayerDead()
     {
         GameManager.instance.ActivateShop();
+        anime.SetTrigger("Replay");
         Time.timeScale = 0;
     }
 
