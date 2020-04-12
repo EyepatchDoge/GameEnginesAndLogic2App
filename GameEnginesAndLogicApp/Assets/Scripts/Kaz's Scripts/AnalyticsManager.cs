@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Analytics;
 
+/// <summary>
+/// Kas
+/// Created a manager to add analytics to the game
+/// </summary>
+/// 
 public class AnalyticsManager : MonoBehaviour
 {
     public void PurchaseShield()

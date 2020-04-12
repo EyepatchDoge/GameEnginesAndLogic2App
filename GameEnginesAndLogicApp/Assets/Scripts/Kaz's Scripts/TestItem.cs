@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// kas
 /// This script is a test run for items that can be purchased with in-game currency 
 /// </summary>
 public class TestItem : MonoBehaviour, IAbility

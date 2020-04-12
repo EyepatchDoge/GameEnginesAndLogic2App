@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+/// <summary>
+/// kas
+/// script that will check the so of the space coins and deactivate if coins aren't needed 
+/// </summary>
 
 public class VideoAdsManager : MonoBehaviour
 {

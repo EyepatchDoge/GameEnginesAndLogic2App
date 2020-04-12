@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
+/// Kas
 /// this is the purchaser script that will be used in the store for in game currency purchases
 /// </summary>
 
@@ -32,13 +33,13 @@ public class AbilityPurchases : MonoBehaviour
            coinAmount.text = spaceMoney.currencyAmount.ToString(); 
 
         }
-
+        //if player doesn't have enough money to purchase, tell them
         else if(spaceMoney.currencyAmount < SO.cost)
         {
             warningText.text = "You do not have enough money, please puchase more, play more or watch an ad";
         }
 
-
+        //if the player has already purchased the abilty, tell them
         else if(aManager.abilityDictionary[SO] == true)
         {
             warningText.text = "You have already purchased this ability";

@@ -2,6 +2,11 @@
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
 
+/// <summary>
+/// kas
+/// script that creates an ad for the player and rewards them 20 coins on completion
+/// </summary>
+
 [RequireComponent(typeof(Button))]
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsListener
 {
