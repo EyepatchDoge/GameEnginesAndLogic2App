@@ -14,8 +14,7 @@ public class GameManager : MonoBehaviour
     private Scene scene;
     public static GameManager instance;
     public AbilityManager aManager;
-    public InGameCurrencySO spaceCoins;
-    public Text coinsAmount;
+    
     #endregion
 
     // Start is called before the first frame update
@@ -31,12 +30,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
 
-
-        coinsAmount.text = spaceCoins.currencyAmount.ToString();
-        //if(aManager == null)
-        //{
-        //    aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
-        //}
+        playDed = false;
 
     }
 
@@ -115,6 +109,18 @@ public class GameManager : MonoBehaviour
         //}
         #endregion
     }
+
+    //public void SwitchPlayerTofu()
+    //{
+    //    Child.SetActive(false);
+    //    Tofu.SetActive(true);
+    //}
+    //public void SwitchPlayerChild()
+    //{
+    //    Child.SetActive(true);
+    //    Tofu.SetActive(false);
+    //}
+
     //switched the armour ability from being apart of player's animations to just a simple gameobject :)
     public void PlayerArmmoured()
     {
@@ -138,7 +144,7 @@ public class GameManager : MonoBehaviour
         {
             aManager.ApplyAbilities();
         }
-              
+        playDed = false;              
         
     }
 
@@ -150,7 +156,7 @@ public class GameManager : MonoBehaviour
 
     public void ActivateShop() 
     {
-        
+        playDed = true;
         shop.SetActive(true);
         Debug.Log("Scene was reloaded");
     }

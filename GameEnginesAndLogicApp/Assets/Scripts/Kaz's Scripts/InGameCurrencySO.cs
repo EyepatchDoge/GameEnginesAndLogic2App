@@ -8,5 +8,5 @@ public class InGameCurrencySO : ScriptableObject
 {
     public string currencyName;
     public Sprite currency;
-    public int currencyAmount;
+    public float currencyAmount;
 }

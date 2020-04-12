@@ -13,7 +13,7 @@ public class TestItem : MonoBehaviour, IAbility
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            PlayCelebrationClip();
+            //PlayCelebrationClip();
         }
     }
 

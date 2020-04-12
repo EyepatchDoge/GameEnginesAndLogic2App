@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76734d607100db54e9442cc3fed70583, type: 3}
   m_Name: TestAbility
   m_EditorClassIdentifier: 
-  cost: 10
+  cost: 100
   scriptPrefab: {fileID: 1096299237606969401, guid: 316300b84f92174479aa9a0491d830c3,
     type: 3}

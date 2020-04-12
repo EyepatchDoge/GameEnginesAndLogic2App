@@ -16,7 +16,7 @@ public class AsteroidManager : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(1,2));
         objectPooler.SpawnFromPool(poolTag, new Vector3(transform.position.x, Random.Range(minSpawnPosY, maxSpawnPosY), transform.position.z), Quaternion.identity);
 
-        FindObjectOfType<AudioManager>().Play("Asteroid");
+        //FindObjectOfType<AudioManager>().Play("Asteroid");
        
         StartCoroutine("AsteroidSpawner");
         

@@ -45,16 +45,7 @@ public class PaulPlayer : MonoBehaviour
 
         }
 
-        if(Protection == true)
-        {
-
-            anime.SetBool("isArmoured", true);
-
-        }
-        else if(Protection == false)
-        {
-            anime.SetBool("isArmoured", false);
-        }
+        
 
         //this is for testing purposes but does the same thing
         if (Input.GetKey(KeyCode.A))
@@ -92,20 +83,7 @@ public class PaulPlayer : MonoBehaviour
             }
         }
         
-        else if(Protection == true)
-        {
-            if (collision.gameObject.tag == "Asteroid")
-            {
-                Protection = false;
-                collision.gameObject.SetActive(false);
-            }
-        }
         
-        if (collision.gameObject.tag == "Coin")
-        {
-            GameManager.instance.Points++;
-            collision.gameObject.SetActive(false);
-        }
     }
 
     // Sets timeScale to zero, call 
@@ -120,7 +98,7 @@ public class PaulPlayer : MonoBehaviour
         Time.timeScale = 1;
         rb.isKinematic = false;
         anime.SetTrigger("Replay");
-        //aManager.ApplyAbilities();
+        GameManager.instance.playDed = false;
 
     }
 }
