@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Skins : MonoBehaviour, IAbility
+public class Skins : MonoBehaviour
 {
     public GameObject SkinChooser;
+    public static Skins instance;
 
-    public void TurnOnButtons()
+    public void Awake()
     {
-
-        SkinChooser.SetActive(true);
+        instance = this;
     }
 
-    public void UseAbility()
-    {
-        TurnOnButtons();
-    }
+    //public void TurnOnButtons()
+    //{
+        
+    //    SkinChooser.SetActive(true);
+    //}
+
+    
 }

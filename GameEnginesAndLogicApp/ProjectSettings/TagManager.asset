@@ -10,6 +10,7 @@ TagManager:
   - Light
   - AbilityManager
   - ArmourTran
+  - ButtonLocal
   layers:
   - Default
   - TransparentFX
