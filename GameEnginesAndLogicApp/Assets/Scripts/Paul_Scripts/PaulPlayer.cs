@@ -47,8 +47,6 @@ public class PaulPlayer : MonoBehaviour
            }
         }
 
-        
-
         //this is for testing purposes but does the same thing
         if (Input.GetKey(KeyCode.A))
         {
@@ -69,8 +67,6 @@ public class PaulPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(Protection == false)
-        {
             if (collision.gameObject.tag == "Asteroid")
             {
                 // Sets player to isKinematic and velocity to zero
@@ -83,7 +79,7 @@ public class PaulPlayer : MonoBehaviour
                 // Disables asteroid that player collided with
                 collision.gameObject.SetActive(false);
             }
-        }
+        
         
         
     }
