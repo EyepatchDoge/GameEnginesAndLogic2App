@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class UIHandler : MonoBehaviour
 {
     public InGameCurrencySO spaceCoins;
-    public Text coinsAmount;
+    public Text coinsAmount, resultAmount;
     public static UIHandler instance;
-    public GameObject pauseButton;
+    public float resultCoins;
+    public GameObject pauseButton, resultscren;
 
     public void Awake()
     {
@@ -16,9 +17,9 @@ public class UIHandler : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    public void SetDef()
     {
-        
+        resultCoins = 0;
         
     }
 
@@ -27,14 +28,20 @@ public class UIHandler : MonoBehaviour
     {
         coinsAmount.text = Mathf.RoundToInt(spaceCoins.currencyAmount).ToString();
         spaceCoins.currencyAmount += Time.deltaTime;
+        resultCoins += Time.deltaTime;
+        resultAmount.text = Mathf.RoundToInt(resultCoins).ToString();
 
         if (GameManager.instance.playDed == false)
         {  
             pauseButton.SetActive(true);
+            
         }
         else if(GameManager.instance.playDed == true)
         {
+            resultscren.SetActive(true);
             pauseButton.SetActive(false);
         }
+
+        //remember to add rankiogs to the result amount later
     }
 }

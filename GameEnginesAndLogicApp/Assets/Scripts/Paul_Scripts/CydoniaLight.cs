@@ -50,7 +50,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     IEnumerator LightTimer()
     {
-        yield return new WaitForSeconds(90f);
+        yield return new WaitForSeconds(10f);
         cirCollid.enabled = false;
         sp.enabled = false;
     }
