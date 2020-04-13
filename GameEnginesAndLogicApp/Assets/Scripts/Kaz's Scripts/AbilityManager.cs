@@ -65,15 +65,6 @@ public class AbilityManager : MonoBehaviour
         
     }
 
-   
-
-
-    //reference from test script sent to here to use it in the purchasing script
-    /*public void TestItemAbility()
-    {
-        testI.PlayCelebrationClip();
-    }*/
-
     //when you start the run, this will active all the abilities bought (set to true)
     [ContextMenu("Apply Abilities")]
     public void ApplyAbilities()
@@ -86,7 +77,8 @@ public class AbilityManager : MonoBehaviour
             if(ability.Value == true)
             {
                 //create the ability and use it 
-                GameObject go = Instantiate(ability.Key.scriptPrefab);
+                GameObject go = ability.Key.scriptPrefab;
+                go.SetActive(true);
                 go.GetComponent<IAbility>().UseAbility();
                 //UpdateDictonary(ability.Key, false);
                 tempList.Add(ability.Key); //add it to a temporary list list

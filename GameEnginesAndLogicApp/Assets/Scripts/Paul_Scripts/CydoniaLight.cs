@@ -21,12 +21,6 @@ public class CydoniaLight : MonoBehaviour, IAbility
     public void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
-
-        //if(target == null)
-        //{
-        //    target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        //}
-        
     }
 
     void OnTriggerEnter2D (Collider2D other)

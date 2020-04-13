@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AsteroidManager : MonoBehaviour
 {
+    #region Variables
     // Spawn boundaries for new asteroids
     public float minSpawnPosY;
     public float maxSpawnPosY;
@@ -13,8 +14,9 @@ public class AsteroidManager : MonoBehaviour
     public string poolTag1;
     public string poolTag2;
     ObjectPooler objectPooler;
- 
-    // Spawns asteroids in a random location between 1-2 seconds
+    #endregion
+
+    // Spawns asteroids in a random location (between a defined max and min y position) between 1-2 seconds
     public IEnumerator AsteroidSpawner()
     {
         yield return new WaitForSeconds(Random.Range(1,2));
@@ -28,7 +30,8 @@ public class AsteroidManager : MonoBehaviour
     // Spawns asteroids in a random offset of the player between 0.8-1.3 seconds
     public IEnumerator AsteroidSpawner2()
     {
-        yield return new WaitForSeconds(Random.Range(.5f, .9f));
+        // Checks the player position
+        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().transform.position.y;
 
         // If player is at the top boundary
         if (playerPos < -1.5)
@@ -46,6 +49,8 @@ public class AsteroidManager : MonoBehaviour
         objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, Random.Range((playerPos - playerPosOffset), (playerPos + playerPosOffset)), transform.position.z), Quaternion.identity);
         }
 
+        yield return new WaitForSeconds(Random.Range(.5f, .9f));
+
         // Restart the coroutine
         StartCoroutine("AsteroidSpawner2");
     }
@@ -53,13 +58,11 @@ public class AsteroidManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Sets objectPooler to the current existing instance of ObjectPooler
         objectPooler = ObjectPooler.Instance;
+
+        // Starts the coroutines for both sets of asteroids
         StartCoroutine("AsteroidSpawner");
         StartCoroutine("AsteroidSpawner2");
-    }
-
-    void FixedUpdate()
-    {
-        playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().transform.position.y;
     }
 }

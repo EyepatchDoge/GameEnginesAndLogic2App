@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PaulPlayer : MonoBehaviour
 {
+    #region Variables
     public Rigidbody2D rb;
     public Animator anime;
     public LayerMask groundDec;
@@ -11,17 +12,15 @@ public class PaulPlayer : MonoBehaviour
     public Transform gDeteque;
     public bool Jump;
     public static bool Protection;
-    //public GameObject abilityManager;
     public AbilityManager aManager;
     public GameObject startPlayerPos;
-    public Vector3 startAsteroidPos;
     public GameObject[] asteroids;
+    #endregion
 
+    // Gets references to Ability Manager
     void Start()
     {
         aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
-        
-        startAsteroidPos = GameObject.FindGameObjectWithTag("AsteroidManager").transform.position;
     }
 
     // Update is called once per frame
@@ -46,7 +45,6 @@ public class PaulPlayer : MonoBehaviour
                  //rb.velocity = Vector2.up * flyVel;
                  anime.SetBool("Flying", false);
            }
-
         }
 
         
@@ -90,7 +88,7 @@ public class PaulPlayer : MonoBehaviour
         
     }
 
-    // Sets timeScale to zero, call 
+    // Sets timeScale to zero
     public void PlayerDead()
     {
         GameManager.instance.ActivateShop();
@@ -98,19 +96,25 @@ public class PaulPlayer : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    // Resets the game without reloading scene
     public void StartRun()
     {
         Time.timeScale = 1;
         rb.isKinematic = false;
         anime.SetTrigger("Replay");
+
         GameManager.instance.playDed = false;
+
+        // Resets the player back to its recorded start pos
         this.gameObject.transform.position = startPlayerPos.transform.position;
+
+        // Finds all asteroids active in scene
         asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
       
+        // Sets all current asteroids active to false
         foreach (GameObject asteroid in asteroids)
         {
             asteroid.SetActive(false);
-
         }
     }
 }
