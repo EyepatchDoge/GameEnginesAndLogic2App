@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76734d607100db54e9442cc3fed70583, type: 3}
   m_Name: ArmourAbility
   m_EditorClassIdentifier: 
-  cost: 20
+  cost: 30
   scriptPrefab: {fileID: 9084625115946036964, guid: 72be563434c49b140a84b40f0ede2a7b,
     type: 3}
