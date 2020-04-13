@@ -219,6 +219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17127269}
   - component: {fileID: 17127268}
+  - component: {fileID: 17127270}
   m_Layer: 0
   m_Name: Asteroid Trigger Zone
   m_TagString: AsteroidBoundary
@@ -266,6 +267,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &17127270
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17127267}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.71, y: -4.83}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 46.38, y: 4.01}
+  m_EdgeRadius: 0
 --- !u!1 &77553096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,6 +1253,9 @@ MonoBehaviour:
   gDeteque: {fileID: 16582305}
   Jump: 0
   aManager: {fileID: 0}
+  startPlayerPos: {x: 0, y: 0, z: 0}
+  startAsteroidPos: {x: 0, y: 0, z: 0}
+  asteroids: []
 --- !u!95 &412795765
 Animator:
   serializedVersion: 3
@@ -4624,9 +4654,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1588221379}
   - component: {fileID: 1588221378}
+  - component: {fileID: 1588221380}
   m_Layer: 0
   m_Name: GameBoundaries
-  m_TagString: Untagged
+  m_TagString: AsteroidBoundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4671,6 +4702,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1588221380
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588221377}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.37, y: 8.24}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.48, y: 1.83}
+  m_EdgeRadius: 0
 --- !u!1001 &1617735476
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10086,6 +10143,9 @@ MonoBehaviour:
   gDeteque: {fileID: 863306449}
   Jump: 0
   aManager: {fileID: 0}
+  startPlayerPos: {x: 0, y: 0, z: 0}
+  startAsteroidPos: {x: 0, y: 0, z: 0}
+  asteroids: []
 --- !u!114 &1840000485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10110,6 +10170,11 @@ PrefabInstance:
     - target: {fileID: 8733399427543039889, guid: 6d6091d66f6931d4f825a71564138bd1,
         type: 3}
       propertyPath: m_Name
+      value: AsteroidManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733399427543039889, guid: 6d6091d66f6931d4f825a71564138bd1,
+        type: 3}
+      propertyPath: m_TagString
       value: AsteroidManager
       objectReference: {fileID: 0}
     - target: {fileID: 8733399427543039895, guid: 6d6091d66f6931d4f825a71564138bd1,
@@ -10171,6 +10236,21 @@ PrefabInstance:
         type: 3}
       propertyPath: poolTag
       value: asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733399427543039894, guid: 6d6091d66f6931d4f825a71564138bd1,
+        type: 3}
+      propertyPath: poolTag1
+      value: asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733399427543039894, guid: 6d6091d66f6931d4f825a71564138bd1,
+        type: 3}
+      propertyPath: poolTag2
+      value: asteroidPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8733399427543039894, guid: 6d6091d66f6931d4f825a71564138bd1,
+        type: 3}
+      propertyPath: playerPosOffset
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6091d66f6931d4f825a71564138bd1, type: 3}
@@ -11123,18 +11203,19 @@ PrefabInstance:
     - target: {fileID: 2536744375556681035, guid: 5b25b2284da403649851faeac3d676cb,
         type: 3}
       propertyPath: pools.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2536744375556681035, guid: 5b25b2284da403649851faeac3d676cb,
         type: 3}
       propertyPath: pools.Array.data[1].tag
-      value: coins
+      value: asteroidPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 2536744375556681035, guid: 5b25b2284da403649851faeac3d676cb,
         type: 3}
       propertyPath: pools.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6003412244125317141, guid: d42cfbc5aa8e00e4fbe6d1fbabc27182,
+        type: 3}
     - target: {fileID: 2536744375556681035, guid: 5b25b2284da403649851faeac3d676cb,
         type: 3}
       propertyPath: pools.Array.data[1].size

@@ -13,11 +13,15 @@ public class PaulPlayer : MonoBehaviour
     public static bool Protection;
     //public GameObject abilityManager;
     public AbilityManager aManager;
+    public Vector3 startPlayerPos;
+    public Vector3 startAsteroidPos;
+    public GameObject[] asteroids;
 
     void Start()
     {
         aManager = GameObject.FindGameObjectWithTag("AbilityManager").GetComponent<AbilityManager>();
-        
+        startPlayerPos = this.gameObject.transform.position;
+        startAsteroidPos = GameObject.FindGameObjectWithTag("AsteroidManager").transform.position;
     }
 
     // Update is called once per frame
@@ -100,6 +104,13 @@ public class PaulPlayer : MonoBehaviour
         rb.isKinematic = false;
         anime.SetTrigger("Replay");
         GameManager.instance.playDed = false;
+        this.gameObject.transform.position = startPlayerPos;
+        asteroids = GameObject.FindGameObjectsWithTag("Asteroid");
+      
+        foreach (GameObject asteroid in asteroids)
+        {
+            asteroid.SetActive(false);
 
+        }
     }
 }

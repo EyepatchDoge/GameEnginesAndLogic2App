@@ -11,6 +11,7 @@ TagManager:
   - AbilityManager
   - ArmourTran
   - ButtonLocal
+  - AsteroidManager
   layers:
   - Default
   - TransparentFX
