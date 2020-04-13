@@ -10,13 +10,5 @@ public class Skins : MonoBehaviour
     public void Awake()
     {
         instance = this;
-    }
-
-    //public void TurnOnButtons()
-    //{
-        
-    //    SkinChooser.SetActive(true);
-    //}
-
-    
+    }   
 }
