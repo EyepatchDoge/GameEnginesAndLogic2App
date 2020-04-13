@@ -23,21 +23,7 @@ public class AbilityManager : MonoBehaviour
 
     private void Awake()
     {
-        #region Singleton Implementation (Disabled)
-        /*
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }*/
-        #endregion
-
-        InitializeDictionary();
-        
+        InitializeDictionary();   
     }
 
     private void InitializeDictionary()
@@ -80,9 +66,8 @@ public class AbilityManager : MonoBehaviour
                 GameObject go = Instantiate(ability.Key.scriptPrefab);
                 go.GetComponent<IAbility>().UseAbility();
                 //UpdateDictonary(ability.Key, false);
-                tempList.Add(ability.Key); //add it to a temporary list list
-
-                
+                tempList.Add(ability.Key); 
+                //add it to a temporary list list
             }
         }
 

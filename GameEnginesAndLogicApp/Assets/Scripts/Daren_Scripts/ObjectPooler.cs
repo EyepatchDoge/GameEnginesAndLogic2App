@@ -24,11 +24,12 @@ public class ObjectPooler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        CreateDictionary();
     }
     #endregion
 
     // Start is called before the first frame update
-    void Start()
+    void CreateDictionary()
     {
         // Creates a new empty dictonary
         poolDictionary = new Dictionary<string, Queue<GameObject>>();

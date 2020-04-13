@@ -102,7 +102,6 @@ public class PaulPlayer : MonoBehaviour
         Time.timeScale = 1;
         rb.isKinematic = false;
         anime.SetTrigger("Replay");
-
         GameManager.instance.playDed = false;
 
         // Resets the player back to its recorded start pos

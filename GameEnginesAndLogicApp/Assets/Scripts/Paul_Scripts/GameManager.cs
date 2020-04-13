@@ -85,20 +85,6 @@ public class GameManager : MonoBehaviour
         #endregion
     }
 
-    // Method for when game starts
-    public void StartGame()
-    {
-        Debug.Log("Game started");
-        Time.timeScale = 1;
-        SceneManager.LoadScene(1);
-        if(aManager != null)
-        {
-            aManager.ApplyAbilities();
-        }
-        playDed = false;              
-        
-    }
-
     // Pulls up shop and results tab when player dies
     public void ActivateShop()
     {
