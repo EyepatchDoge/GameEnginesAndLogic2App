@@ -77,8 +77,7 @@ public class AbilityManager : MonoBehaviour
             if(ability.Value == true)
             {
                 //create the ability and use it 
-                GameObject go = ability.Key.scriptPrefab;
-                go.SetActive(true);
+                GameObject go = Instantiate(ability.Key.scriptPrefab);
                 go.GetComponent<IAbility>().UseAbility();
                 //UpdateDictonary(ability.Key, false);
                 tempList.Add(ability.Key); //add it to a temporary list list
