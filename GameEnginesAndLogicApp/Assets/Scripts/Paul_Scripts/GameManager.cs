@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void StartGame()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+    }
+
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
