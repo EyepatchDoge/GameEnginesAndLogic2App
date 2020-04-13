@@ -157,6 +157,7 @@ public class GameManager : MonoBehaviour
     public void ActivateShop() 
     {
         playDed = true;
+        UIHandler.instance.resultscren.SetActive(true);
         shop.SetActive(true);
         Debug.Log("Scene was reloaded");
     }

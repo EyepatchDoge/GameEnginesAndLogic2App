@@ -20,7 +20,7 @@ public class UIHandler : MonoBehaviour
     public void SetDef()
     {
         resultCoins = 0;
-        
+        resultscren.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class UIHandler : MonoBehaviour
         }
         else if(GameManager.instance.playDed == true)
         {
-            resultscren.SetActive(true);
+            
             pauseButton.SetActive(false);
         }
 
