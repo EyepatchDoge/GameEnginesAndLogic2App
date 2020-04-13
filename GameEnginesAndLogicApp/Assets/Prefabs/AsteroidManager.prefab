@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8733399427543039894}
   m_Layer: 0
   m_Name: AsteroidManager
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,4 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minSpawnPosY: -1.77
   maxSpawnPosY: 5.55
-  poolTag: asteroid
+  playerPos: 0
+  playerPosOffset: 0.5
+  poolTag1: asteroid
+  poolTag2: asteroidPlayer

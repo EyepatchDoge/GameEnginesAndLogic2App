@@ -28,15 +28,22 @@ public class AsteroidManager : MonoBehaviour
     // Spawns asteroids in a random offset of the player between 0.8-1.3 seconds
     public IEnumerator AsteroidSpawner2()
     {
-        yield return new WaitForSeconds(Random.Range(.8f, 1.3f));
+        yield return new WaitForSeconds(Random.Range(.5f, .9f));
 
-        if (playerPos < -1.5 && playerPos > -1.6)
+        // If player is at the top boundary
+        if (playerPos < -1.5)
         {
-            objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, playerPos, transform.position.z), Quaternion.identity);
+            objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, playerPos + playerPosOffset, transform.position.z), Quaternion.identity);
         }
+        // If the player is at the bottom boundary
+        else if (playerPos > 5.6f)
+        {
+            objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, playerPos - playerPosOffset, transform.position.z), Quaternion.identity);
+        }
+        // Randomize its spawn position from either above the player or below
         else
         {
-        objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, Random.Range((playerPos - playerPosOffset), (playerPos +playerPosOffset)), transform.position.z), Quaternion.identity);
+        objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, Random.Range((playerPos - playerPosOffset), (playerPos + playerPosOffset)), transform.position.z), Quaternion.identity);
         }
 
         // Restart the coroutine
