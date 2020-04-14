@@ -352,10 +352,10 @@ RectTransform:
   m_Father: {fileID: 256783823373715400}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -493, y: 270}
-  m_SizeDelta: {x: 314.3, y: 111}
+  m_AnchorMin: {x: 0.15, y: 0.81}
+  m_AnchorMax: {x: 0.15, y: 0.81}
+  m_AnchoredPosition: {x: 22, y: -0.000030517578}
+  m_SizeDelta: {x: 311.3, y: 111}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &77553098
 MonoBehaviour:
@@ -1136,33 +1136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins100
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4135624658811587954}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 100
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &366538159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3981,10 +3954,10 @@ RectTransform:
   m_Father: {fileID: 256783823373715400}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -248.6, y: -253.4}
-  m_SizeDelta: {x: 657, y: 133.9}
+  m_AnchorMin: {x: 0.32, y: 0.2}
+  m_AnchorMax: {x: 0.32, y: 0.2}
+  m_AnchoredPosition: {x: 22.399994, y: 25.600006}
+  m_SizeDelta: {x: 659, y: 133.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171483204
 MonoBehaviour:
@@ -4136,10 +4109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078fe15978051ba488fb0a8b3d8220df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceCoins: {fileID: 11400000, guid: dbebb953391e0844c96b1dbeb17b484c, type: 2}
   coinsAmount: {fileID: 614936285}
   resultAmount: {fileID: 1415775361}
-  resultCoins: 0
   pauseButton: {fileID: 392607073}
   resultscren: {fileID: 880094229}
 --- !u!4 &1263474793
@@ -4752,7 +4723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Emerald Armour
+  m_Text: SHEEEULD
 --- !u!222 &1431755002
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10591,33 +10562,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins50
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4135624658811587954}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 50
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &1819721991
 GameObject:
   m_ObjectHideFlags: 0
@@ -11659,44 +11603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: spacecoins500
-  buttonType: 0
-  consumePurchase: 1
-  onPurchaseComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4135624658811587954}
-        m_MethodName: PurchaseCoins
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 500
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1162435242}
-        m_MethodName: FiveHundredSpaceCoins
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseCompletedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  onPurchaseFailed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Purchasing.IAPButton+OnPurchaseFailedEvent, Assembly-CSharp-firstpass,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  titleText: {fileID: 0}
-  descriptionText: {fileID: 0}
-  priceText: {fileID: 0}
 --- !u!1 &2044939750
 GameObject:
   m_ObjectHideFlags: 0
@@ -13674,6 +13580,11 @@ PrefabInstance:
       propertyPath: coinsAmount
       value: 
       objectReference: {fileID: 614936285}
+    - target: {fileID: 565940701832312196, guid: 8da9dace8c5351b4a9550fcef08a4cef,
+        type: 3}
+      propertyPath: Gamestart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 565940701832312197, guid: 8da9dace8c5351b4a9550fcef08a4cef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13832,18 +13743,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccc985a83fbb83c438bcc38f1da577ef, type: 3}
---- !u!114 &4135624658811587954 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7501078304196668120, guid: ccc985a83fbb83c438bcc38f1da577ef,
-    type: 3}
-  m_PrefabInstance: {fileID: 4135624658811587953}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc378c15c5e3a041b14a52659a8176e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4741845141162022535
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,31 +5,40 @@ using UnityEngine.UI;
 
 public class UIHandler : MonoBehaviour
 {
-    public InGameCurrencySO spaceCoins;
+    //public InGameCurrencySO spaceCoins;
     public Text coinsAmount, resultAmount;
     public static UIHandler instance;
-    public float resultCoins;
+    //public float resultCoins;
     public GameObject pauseButton, resultscren;
-
+    // all of this code is done by Paul
     public void Awake()
     {
-        instance = this;
+        //makes singleton
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        
     }
 
     // Start is called before the first frame update
     public void SetDef()
     {
-        resultCoins = 0;
+        GameManager.instance.resultCoins = 0;
         resultscren.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        coinsAmount.text = Mathf.RoundToInt(spaceCoins.currencyAmount).ToString();
-        spaceCoins.currencyAmount += Time.deltaTime;
-        resultCoins += Time.deltaTime;
-        resultAmount.text = Mathf.RoundToInt(resultCoins).ToString();
+        //updates UI and handles some UI assets
+        coinsAmount.text = Mathf.RoundToInt(GameManager.instance.spaceCoins.currencyAmount).ToString();
+        resultAmount.text = Mathf.RoundToInt(GameManager.instance.resultCoins).ToString();
 
         if (GameManager.instance.playDed == false)
         {  
@@ -42,6 +51,6 @@ public class UIHandler : MonoBehaviour
             pauseButton.SetActive(false);
         }
 
-        //remember to add rankiogs to the result amount later
+        
     }
 }

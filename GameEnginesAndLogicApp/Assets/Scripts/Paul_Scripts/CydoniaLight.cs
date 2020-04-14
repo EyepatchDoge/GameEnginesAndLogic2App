@@ -11,6 +11,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     public void Start()
     {
+        //if the target is not set then finds the target based on tag and gets transform
         if (target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -20,12 +21,13 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     public void Update()
     {
+        //follows player
         transform.position = Vector2.MoveTowards(transform.position, target.position, hoam * Time.deltaTime);
     }
 
     void OnTriggerEnter2D (Collider2D other)
     {
-        
+        //if the player collides with an asteroid with the light turned on, the asteroid will get turned off
         if (other.gameObject.tag == "Asteroid")
         {
            other.gameObject.SetActive(false);
@@ -35,7 +37,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     public void Summon()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //when buaght will set variables to active
         StartCoroutine(LightTimer());
         cirCollid.enabled = true;
         sp.enabled = true;
@@ -44,6 +46,7 @@ public class CydoniaLight : MonoBehaviour, IAbility
 
     IEnumerator LightTimer()
     {
+        //will turn off collider and sprite renderer when 10 secs have reached
         yield return new WaitForSeconds(10f);
         cirCollid.enabled = false;
         sp.enabled = false;
@@ -54,4 +57,5 @@ public class CydoniaLight : MonoBehaviour, IAbility
         Summon();
         
     }
+    //done by Paul Crewe
 }
