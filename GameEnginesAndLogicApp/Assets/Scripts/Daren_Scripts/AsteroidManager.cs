@@ -21,7 +21,7 @@ public class AsteroidManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(1,2));
         objectPooler.SpawnFromPool(poolTag1, new Vector3(transform.position.x, Random.Range(minSpawnPosY, maxSpawnPosY), transform.position.z), Quaternion.identity);
-
+        FindObjectOfType<AudioManager>().Play("Asteroid");
         // Restart the coroutine   
         StartCoroutine("AsteroidSpawner");
         
@@ -36,17 +36,20 @@ public class AsteroidManager : MonoBehaviour
         // If player is at the top boundary
         if (playerPos < -1.5)
         {
+            
             objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, playerPos + playerPosOffset, transform.position.z), Quaternion.identity);
         }
         // If the player is at the bottom boundary
         else if (playerPos > 5.6f)
         {
+           
             objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, playerPos - playerPosOffset, transform.position.z), Quaternion.identity);
         }
         // Randomize its spawn position from either above the player or below
         else
         {
-        objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, Random.Range((playerPos - playerPosOffset), (playerPos + playerPosOffset)), transform.position.z), Quaternion.identity);
+           
+            objectPooler.SpawnFromPool(poolTag2, new Vector3(transform.position.x, Random.Range((playerPos - playerPosOffset), (playerPos + playerPosOffset)), transform.position.z), Quaternion.identity);
         }
 
         yield return new WaitForSeconds(Random.Range(.5f, .9f));
@@ -64,5 +67,6 @@ public class AsteroidManager : MonoBehaviour
         // Starts the coroutines for both sets of asteroids
         StartCoroutine("AsteroidSpawner");
         StartCoroutine("AsteroidSpawner2");
+        
     }
 }

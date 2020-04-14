@@ -4,7 +4,7 @@ using System;
 
 public class AudioManager : MonoBehaviour
 {
-    
+    //Create array to hold all sound effects
     public Sounds[] sounds;
 
     void Awake()
@@ -20,10 +20,12 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //When adding sound effects within a code
     public void Play (string name)
     {
        Sounds s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
+        //Code: FindObjectOfType<AudioManager>().Play("String Name");
     }
 
 }

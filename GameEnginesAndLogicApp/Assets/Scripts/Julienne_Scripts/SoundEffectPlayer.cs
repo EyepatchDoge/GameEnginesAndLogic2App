@@ -24,4 +24,17 @@ public class SoundEffectPlayer : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("BuyMoney");
 
     }
+
+    public void startRun()
+    {
+        FindObjectOfType<AudioManager>().Play("StartRun");
+
+    }
+
+    public void exit()
+    {
+        FindObjectOfType<AudioManager>().Play("Exit");
+
+    }
+
 }

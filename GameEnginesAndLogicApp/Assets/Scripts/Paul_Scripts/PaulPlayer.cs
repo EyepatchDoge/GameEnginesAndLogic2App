@@ -75,7 +75,7 @@ public class PaulPlayer : MonoBehaviour
         //for when player collides with asteroid
         if (collision.gameObject.tag == "Asteroid")
         {
-
+            FindObjectOfType<AudioManager>().Play("Explosion");
             // Sets player to isKinematic and velocity to zero
             rb.isKinematic = true;
             rb.velocity = Vector2.zero;
