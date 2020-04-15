@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Paul and Daren's Script
+    /// </summary>
     #region Variables
     public InGameCurrencySO spaceCoins;
     public GameObject shop;

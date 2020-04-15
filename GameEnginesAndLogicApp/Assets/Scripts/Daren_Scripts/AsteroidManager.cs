@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class AsteroidManager : MonoBehaviour
 {
+    /// <summary>
+    /// Daren's Script
+    /// </summary>
+
     #region Variables
     // Spawn boundaries for new asteroids
     public float minSpawnPosY;

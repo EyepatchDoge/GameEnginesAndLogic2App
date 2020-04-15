@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class AsteroidScript : MonoBehaviour
 { 
+    /// <summary>
+    /// Daren's Script
+    /// Adds a velocity towards the rigidbody and checks the trigger collider for when the asteroid leaves the boundary zone
+    /// </summary>
+
     public Rigidbody2D rb;
     public Vector3 movementDir;
 

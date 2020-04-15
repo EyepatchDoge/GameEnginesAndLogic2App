@@ -2089,7 +2089,7 @@ MonoBehaviour:
     pitch: 2.5
     source: {fileID: 0}
   - name: Asteroid
-    clip: {fileID: 8300000, guid: 39dcc7f50793f9f4dafc9b43ab5eeeb7, type: 3}
+    clip: {fileID: 0}
     volume: 2
     pitch: 2.5
     source: {fileID: 0}

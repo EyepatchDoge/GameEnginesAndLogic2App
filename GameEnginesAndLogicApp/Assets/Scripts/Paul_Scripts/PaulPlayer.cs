@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PaulPlayer : MonoBehaviour
 {
+    //script done by Paul and Daren
+   
     #region Variables
     public Rigidbody2D rb;
     public Animator anime;
@@ -16,7 +18,7 @@ public class PaulPlayer : MonoBehaviour
     public GameObject startPlayerPos;
     public GameObject[] asteroids;
     #endregion
-    //script done by Paul and Daren
+    
     // Gets references to Ability Manager
     void Start()
     {

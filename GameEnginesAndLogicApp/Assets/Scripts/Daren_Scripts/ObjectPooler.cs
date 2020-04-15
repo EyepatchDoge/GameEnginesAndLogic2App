@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour
 {
+    /// <summary>
+    /// Daren's Script
+    /// Creates an object pool for each pool in the list of pools and instantiates the prefab attached to the object when SpawnFromPool()
+    /// </summary>
+
     [System.Serializable]
     public class Pool
     {
